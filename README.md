@@ -4,6 +4,10 @@
 >
 > 🇬🇧 **Made by [webdanismani.com](https://webdanismani.com).** Free community forum support: **[oblifex.com](https://oblifex.com)**
 
+<p align="center">
+  <a href="https://webdanismani.github.io/wd-kart-mockup/"><img src="preview.svg" alt="Kredi kartı mockup animasyonu / Credit card mockup animation" width="820"></a>
+</p>
+
 **[Canlı demo / Live demo](https://webdanismani.github.io/wd-kart-mockup/)** · **[Türkçe](#-türkçe)** · **[English](#-english)**
 
 ---
