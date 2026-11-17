@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Danışmanı — Kredi Kartı Mockup</title>
+  <meta name="description" content="Veri girildikçe canlanan, önlü arkalı animasyonlu kredi kartı ödeme formu tasarımı.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="top">
+    <a class="brand" href="#" aria-label="Web Danışmanı">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M7.5 10.5l4 11 4.5-9 4.5 9 4-11" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+      <span>Web Danışmanı</span>
+    </a>
+    <span class="pill">Tasarım demosu</span>
+  </header>
+
+  <main class="wrap">
+    <!-- SOL: kart sahnesi -->
+    <section class="stage" aria-label="Kart önizlemesi">
+      <div class="scene" id="scene">
+        <div class="tilt" id="tilt">
+          <div class="card" id="card" data-theme="gece">
+            <!-- ÖN YÜZ -->
+            <div class="face front">
+              <div class="glare"></div>
+              <div class="c-brand">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9l5.5 14L16 11l5.5 12L27 9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Web Danışmanı</span>
+              </div>
+              <div class="c-tier" id="tierName">Gece Mavisi</div>
+
+              <svg class="chip" viewBox="0 0 50 38" aria-hidden="true">
+                <rect x=".5" y=".5" width="49" height="37" rx="7" fill="url(#chipg)" stroke="rgba(0,0,0,.25)"/>
+                <path d="M0 13h16M0 25h16M34 13h16M34 25h16M16 0v38M34 0v38M16 19h18" stroke="rgba(0,0,0,.35)" fill="none"/>
+                <defs><linearGradient id="chipg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6e2a0"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#f3dc93"/></linearGradient></defs>
+              </svg>
+              <svg class="nfc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7.5a8 8 0 010 9M10 5a12 12 0 010 14M14 2.5a16 16 0 010 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+
+              <div class="c-number" id="tNumber" aria-hidden="true"></div>
+
+              <div class="c-holder" id="tName">
+                <small>Kart Sahibi</small>
+                <b id="outName">AD SOYAD</b>
+              </div>
+              <div class="c-exp" id="tExp">
+                <small>Son Kullanma</small>
+                <b id="outExp">AA/YY</b>
+              </div>
+
+              <div class="focus-box" id="focusBox"></div>
+            </div>
+
+            <!-- ARKA YÜZ -->
+            <div class="face back">
+              <div class="strip"></div>
+              <div class="sig">
+                <div class="sig-line"><span id="outSig"></span></div>
+                <div class="cvv" id="tCvv"><small>CVV</small><b id="outCvv">•••</b></div>
+              </div>
+              <p class="fine">Bu kart bir tasarım örneğidir ve herhangi bir ödeme aracında geçerli değildir. Bulunması hâlinde lütfen gülümseyin.</p>
+              <div class="back-foot">
+                <span class="holo"></span>
+                <span class="c-brand sm">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9l5.5 14L16 11l5.5 12L27 9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Web Danışmanı</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <div class="themes" role="group" aria-label="Kart teması">
+          <button type="button" class="sw" data-theme="gece" data-name="Gece Mavisi" aria-pressed="true" title="Gece Mavisi"></button>
+          <button type="button" class="sw" data-theme="okyanus" data-name="Okyanus" aria-pressed="false" title="Okyanus"></button>
+          <button type="button" class="sw" data-theme="gunbatimi" data-name="Gün Batımı" aria-pressed="false" title="Gün Batımı"></button>
+          <button type="button" class="sw" data-theme="grafit" data-name="Grafit" aria-pressed="false" title="Grafit"></button>
+        </div>
+        <button type="button" class="ghost" id="flipBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0113.7-5.7L20 8M20 4v4h-4M20 12a8 8 0 01-13.7 5.7L4 16M4 20v-4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Kartı çevir
+        </button>
+      </div>
+    </section>
+
+    <!-- SAĞ: form -->
+    <section class="panel" aria-label="Ödeme formu">
+      <div class="view" id="formView">
+        <div class="panel-head">
+          <div>
+            <h1>Kart bilgileri</h1>
+            <p>Web Danışmanı Pro Paket · Yıllık</p>
+          </div>
+          <div class="amount"><small>Tutar</small><b>1.499,00 ₺</b></div>
+        </div>
+
+        <ol class="steps" id="steps">
+          <li><button type="button" data-step="number"><i>1</i><span>Numara</span></button></li>
+          <li><button type="button" data-step="name"><i>2</i><span>İsim</span></button></li>
+          <li><button type="button" data-step="exp"><i>3</i><span>Tarih</span></button></li>
+          <li><button type="button" data-step="cvv"><i>4</i><span>CVV</span></button></li>
+          <div class="steps-bar"><span id="stepsFill"></span></div>
+        </ol>
+
+        <form id="form" novalidate autocomplete="off">
+          <label class="field" data-field="number">
+            <span>Kart numarası</span>
+            <input id="inNumber" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="off">
+            <em>16 haneli kart numarasını girin</em>
+          </label>
+
+          <label class="field" data-field="name">
+            <span>Kart üzerindeki isim</span>
+            <input id="inName" type="text" placeholder="Ad Soyad" maxlength="26" autocomplete="off" spellcheck="false">
+            <em>Kart sahibinin adını girin</em>
+          </label>
+
+          <div class="row">
+            <label class="field" data-field="exp">
+              <span>Son kullanma</span>
+              <input id="inExp" type="text" inputmode="numeric" placeholder="AA/YY" maxlength="5" autocomplete="off">
+              <em>Geçerli bir tarih girin</em>
+            </label>
+            <label class="field" data-field="cvv">
+              <span>CVV</span>
+              <input id="inCvv" type="text" inputmode="numeric" placeholder="•••" maxlength="3" autocomplete="off">
+              <em>3 haneli güvenlik kodu</em>
+            </label>
+          </div>
+
+          <button class="btn" id="payBtn" type="submit">
+            <span class="btn-label">1.499,00 ₺ Öde</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+          <button class="link" id="demoBtn" type="button">Demo verisiyle doldur</button>
+        </form>
+
+        <p class="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.500-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          Bu bir tasarım demosudur. Gerçek kart bilgisi girmeyin; veriler hiçbir yere gönderilmez.
+        </p>
+      </div>
+
+      <div class="view success" id="successView" hidden>
+        <svg class="check" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="40" r="36"/>
+          <path d="M25 41l10 10 20-22"/>
+        </svg>
+        <h2>Ödeme alındı</h2>
+        <p>Teşekkürler<span id="sName"></span>. <b>1.499,00 ₺</b> tutarındaki ödemeniz <b id="sCard">•••• 0000</b> ile biten kartınızdan onaylandı.</p>
+        <dl>
+          <div><dt>İşlem no</dt><dd id="sRef">WD-000000</dd></div>
+          <div><dt>Ürün</dt><dd>Pro Paket · Yıllık</dd></div>
+        </dl>
+        <button class="btn" id="resetBtn" type="button"><span class="btn-label">Yeni kart dene</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">© Web Danışmanı · Açık kaynak kredi kartı mockup tasarımı</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
